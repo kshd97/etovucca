@@ -10,7 +10,7 @@ DEPS=Database.o libsqlite3.so
 all: $(TARGET)
 
 cgi: etovucca
-		python3 -m http.server --cgi
+		python3 server.py --cgi
 
 etovucca: $(DEPS) $(SRCDIR)/RTBB.c
 		$(CC) $(CFLAGS) -I $(LIBDIR) -o $@ $^ -L./ -lsqlite3
